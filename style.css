@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+:root{
+    --font-family: 'IBM Plex Mono', monospace;
+    --main-color: #101010;
+    --text-color: #00FF00;
+    --disco-animation-duration: 2s;
+    font-family: var(--font-family), monospace;
+    background-color: var(--main-color);
+    background-image: url(background.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+*{
+    font-family: var(--font-family), monospace;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+.Terminal{
+    background-color: #050505;
+    width: 95%;
+    height: 800px;
+    padding: 20px;
+    margin: auto;
+}
+.Prompt {
+    position: relative;
+    border: 2px #00ff00 solid;
+    height: 100%;
+    overflow: hidden;
+}
+.Container{
+    overflow-y: auto;
+    max-height: calc(100% - 70px);
+}
+::-webkit-scrollbar-track { /* These are for scrollbar, won't work on old browsers or firefox */
+    background: #1c1c1c; 
+}
+::-webkit-scrollbar-thumb {
+    background: #26ff00; 
+}
+::-webkit-scrollbar {
+    width: 10px; 
+}
+
+.Prompt input {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #101010;
+    border: none;
+}
+.Prompt span {
+    display: block;
+    border: solid #00FF00 1px;
+}
+
+.Prompt input[type="text"] {
+    border: none;
+    outline: none;
+    padding: 8px;
+    background-color: #101010;
+    font-size: 18px;
+    width: calc(100% - 16px);
+    box-shadow: 0 0 0 2px #00ff00; 
+}
+
+.Prompt input[type="text"]:focus {
+    width: calc(100% - 16px);
+    background-color: #101010;
+    border: none;
+}
+
+.popUp {
+    background-color: #000000;
+    position: fixed;
+    right: 0;
+    top: 0;
+    text-align: center;
+    padding: 5px;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: #00FF00 1.5px solid;
+    border-radius: 10px;
+    width: 300px;
+    height: 200px;
+    color: var(--text-color);
+    z-index: 3;
+}
+
+.popUp.animation {
+    animation-duration: 2s;
+}
+
+.slideIn {
+    animation-name: slideInRight;
+}
+
+.slideOut {
+    animation-name: slideOut;
+}
+.Timer {
+    background-color: #000000;
+    position: fixed;
+    left: 0;
+    top: 0;
+    text-align: center;
+    font-size: 52px;
+    padding: 5px;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: #00FF00 1.5px solid;
+    border-radius: 40px;
+    width: 400px;
+    height: 100px;
+    color: var(--text-color);
+    z-index: 3;
+}
+.Timer.animation {
+    animation-duration: 2s;
+}
+
+.slideInTimer {
+    animation-name: slideInLeft;
+}
+
+.slideOutTimer {
+    animation-name: slideOut;
+}
+
+@keyframes disco {
+    0% { background-color: #ff0000; }
+    14% { background-color: #ff8000; }
+    28% { background-color: #ffff00; }
+    42% { background-color: #80ff00; }
+    57% { background-color: #00ff00; }
+    71% { background-color: #00ff80; }
+    85% { background-color: #00ffff; }
+    100% { background-color: #0080ff; }
+} 
+.disco-active {
+    animation: disco var(--disco-animation-duration) infinite;
+}
+@keyframes slideOut {
+    0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateY(1000%);
+      }
+}
+@keyframes slideInRight {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+}
+@keyframes slideInLeft {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+}

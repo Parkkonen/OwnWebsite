@@ -1,0 +1,120 @@
+@font-face {
+    font-family: 'Main';
+    src: url('/fonts/AXROutrunner.otf') format('opentype'),
+    url('/fonts/AXROutrunner.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Second';
+    src: url("/fonts/Aileron-Regular.otf") format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+}
+:root{
+    font-family: Second, sans-serif;
+    background-color: #4f267d;
+}
+h1{
+    text-align: center;
+    font-family: Main, sans-serif;
+    font-size: 212px;
+    text-shadow: 0 0 60px #FF2A92FF;
+}
+header {
+    padding: 20px;
+    position: relative;
+    border: 3.5px solid transparent;
+    border-image: linear-gradient(135deg, rgba(0, 244, 255, 0.68), rgba(0, 25, 103, 0.68), rgba(247, 42, 255, 0.68));
+    border-image-slice: 1;
+
+}
+
+header li {
+    flex: 1;
+    border-right: 3.5px solid white;
+}
+
+header ul {
+    text-align: center;
+    display: flex;
+    list-style-type: none;
+}
+
+
+ul a{
+    text-decoration: none;
+    color: white;
+}
+
+.gradient-text {
+    background-image: linear-gradient(180deg, #594c7e, #ff2a92);
+
+    background-clip: text;
+    color: transparent;
+    font-weight: bold;
+}
+.synth-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background-color: rgba(150, 55, 255, 0.5);
+    animation: bounce 5000ms ease-in-out infinite;
+    z-index: -2;
+}
+
+.synth-bar2 {
+    margin-bottom: 30px;
+    animation-duration: 3000ms;
+}
+.synth-bar3 {
+    margin-bottom: 70px;
+    animation-duration: 6580ms;
+}
+.synth-bar4 {
+    margin-bottom: 120px;
+    animation-duration: 4580ms;
+}
+/* SECTIONS */
+.main{
+    text-align: center;
+}
+.main p{
+    font-family: Main, sans-serif;
+    font-size: 112px;
+    text-align: center;
+    text-shadow: 0 0 60px #FF2A92FF;
+}
+
+.sun {
+    background: linear-gradient(135deg, rgba(255, 237, 124, 0.68), rgba(255, 143, 171, 0.68), rgba(104, 101, 226, 0.68));
+
+    box-shadow: 0 0 20px rgba(255, 224, 0, 0.68);
+    height: 600px;
+    width: 600px;
+    border-radius: 50%;
+    animation-duration: 3000ms;
+    position: fixed;
+    margin-bottom: 70px;
+    left: 50%;
+    margin-top: -300px;
+    margin-left: -300px;
+    z-index: -1;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
